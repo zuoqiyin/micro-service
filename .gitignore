@@ -1,2 +1,4 @@
 .idea/
 micro-service.iml
+*.class
+*.iml
