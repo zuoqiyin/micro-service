@@ -2,3 +2,4 @@
 micro-service.iml
 *.class
 *.iml
+cloud-provider-payment8001/target/
