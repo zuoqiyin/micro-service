@@ -3,10 +3,7 @@ package cn.zuoqy.springcloud.controller;
 import cn.zuoqy.springcloud.entities.CommonResult;
 import cn.zuoqy.springcloud.entities.Payment;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
@@ -22,7 +19,7 @@ public class OrderController {
     private RestTemplate restTemplate;
 
     @PostMapping("/consumer/payment/add")
-    public CommonResult add(Payment payment) {
+    public CommonResult add(@RequestBody Payment payment) {
         log.info("插入数据");
         return restTemplate.postForObject("http://localhost:8001/payment/add",payment,CommonResult.class);
     }
