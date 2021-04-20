@@ -4,3 +4,4 @@ micro-service.iml
 *.iml
 cloud-provider-payment8001/target/
 cloud-consumer-order80/target/
+cloud-api-commons/target/
