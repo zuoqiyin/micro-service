@@ -2,7 +2,7 @@
 micro-service.iml
 *.class
 *.iml
-cloud-provider-payment8001/target/
-cloud-consumer-order80/target/
+cloud-provider-payment/target/
+cloud-consumer-order/target/
 cloud-api-commons/target/
-cloud-eureka-server7001/target/
+cloud-eureka-server/target/
