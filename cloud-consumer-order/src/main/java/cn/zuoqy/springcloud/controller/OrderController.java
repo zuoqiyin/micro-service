@@ -15,19 +15,21 @@ import javax.annotation.Resource;
 @Slf4j
 public class OrderController {
 
+    static final String PAYMENT_UTL = "http://cloud-payment-service";
+
     @Resource
     private RestTemplate restTemplate;
 
     @PostMapping("/consumer/payment/add")
     public CommonResult add(@RequestBody Payment payment) {
         log.info("插入数据");
-        return restTemplate.postForObject("http://localhost:8001/payment/add",payment,CommonResult.class);
+        return restTemplate.postForObject(PAYMENT_UTL +"/payment/add",payment,CommonResult.class);
     }
 
     @GetMapping("/consumer/payment/get/{id}")
     public CommonResult getPayment(@PathVariable("id") Long id) {
         log.info("查询数据");
-        return restTemplate.getForObject("http://localhost:8001/payment/get/"+id,CommonResult.class);
+        return restTemplate.getForObject(PAYMENT_UTL + "/payment/get/"+id,CommonResult.class);
     }
 
 }
