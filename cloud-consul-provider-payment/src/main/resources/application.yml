@@ -1,0 +1,14 @@
+server:
+  port: 8003
+
+spring:
+  application:
+    name: cloud-consul-payment-service
+  devtools:
+    restart:
+      poll-interval: 2s
+      quiet-period: 1s
+  cloud:
+    consul:
+      discovery:
+        ip-address: 127.0.0.1:8500

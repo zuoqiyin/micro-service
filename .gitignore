@@ -10,3 +10,5 @@ cloud-eureka-consumer-order/target/
 cloud-eureka-provider-payment/target/
 cloud-zk-consumer-order/target/
 cloud-zk-provider-payment/target/
+cloud-consul-provider-payment/target/
+cloud-consul-consumer-order/target/

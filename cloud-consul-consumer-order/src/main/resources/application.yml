@@ -1,0 +1,15 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: cloud-consul-consumer-order
+  devtools:
+    restart:
+      poll-interval: 2s
+      quiet-period: 1s
+  cloud:
+    #注册到consule
+    consul:
+      discovery:
+        ip-address: 127.0.0.1:8500
