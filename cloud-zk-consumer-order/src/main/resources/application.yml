@@ -1,0 +1,14 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: cloud-zk-consumer-order
+  devtools:
+    restart:
+      poll-interval: 2s
+      quiet-period: 1s
+  cloud:
+    #注册到zookeeker
+    zookeeper:
+      connect-string: 127.0.0.1:2181

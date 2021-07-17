@@ -6,3 +6,7 @@ cloud-provider-payment/target/
 cloud-consumer-order/target/
 cloud-api-commons/target/
 cloud-eureka-server/target/
+cloud-eureka-consumer-order/target/
+cloud-eureka-provider-payment/target/
+cloud-zk-consumer-order/target/
+cloud-zk-provider-payment/target/

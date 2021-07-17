@@ -14,6 +14,8 @@
         <module>cloud-eureka-consumer-order</module>
         <module>cloud-api-commons</module>
         <module>cloud-eureka-server</module>
+        <module>cloud-zk-provider-payment</module>
+        <module>cloud-zk-consumer-order</module>
     </modules>
 
     <!-- 统一管理jar包版本 -->
