@@ -3,6 +3,7 @@ package cn.zuoqy.springcloud.controller;
 import cn.zuoqy.springcloud.entities.CommonResult;
 import cn.zuoqy.springcloud.entities.Payment;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
@@ -15,7 +16,7 @@ import javax.annotation.Resource;
 @Slf4j
 public class OrderController {
 
-    static final String PAYMENT_UTL = "http://cloud-payment-service";
+    private static final String PAYMENT_UTL = "http://cloud-payment-service";
 
     @Resource
     private RestTemplate restTemplate;
@@ -31,5 +32,18 @@ public class OrderController {
         log.info("查询数据");
         return restTemplate.getForObject(PAYMENT_UTL + "/payment/get/"+id,CommonResult.class);
     }
+
+    @GetMapping("/consumer/payment/getForEntity/{id}")
+    public CommonResult getPayment2(@PathVariable("id") Long id) {
+        log.info("查询数据");
+        ResponseEntity<CommonResult> entity = restTemplate.getForEntity(PAYMENT_UTL+"/payment/get/"+id,CommonResult.class);
+        if (entity.getStatusCode().is2xxSuccessful()) {
+            return entity.getBody();
+        } else {
+            return new CommonResult<>(-1,"操作失败");
+        }
+    }
+
+
 
 }
